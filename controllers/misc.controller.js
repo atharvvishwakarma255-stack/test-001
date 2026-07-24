@@ -14,26 +14,4 @@ function test2Route(req, res) {
   res.json({ success: true, server: "Server 1", message: "Test route 2 is working" });
 }
 
-
-
-async function testById(req, res) {
-  try {
-    const { id } = req.params;
-
-    if (!id || typeof id !== "string" || id.trim() === "") {
-      return res.status(400).json({
-        message: "Validation failed",
-      });
-    }
-
-    return res.status(200).json(null);
-  } catch (error) {
-    console.error("Test Route Error:", error);
-
-    return res.status(500).json({
-      message: "Internal server error",
-    });
-  }
-}
-
-module.exports = { home, dashboard, testRoute, test2Route, testById };
+module.exports = { home, dashboard, testRoute, test2Route };
