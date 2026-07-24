@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
-app.get("/", (req, res) => {
+app.get("/one", (req, res) => {
     res.send("Hello from Server 1");
 });
 
@@ -12,7 +12,7 @@ app.get("/dashboard", (req, res) => {
 });
 
 
-app.post("/api/v1/document/send", requireBusiness, (request, response) => {
+app.post("/api/v1/document/sends", requireBusiness, (request, response) => {
   const {
     business_package_id: businessPackageId,
     status = "sent",
@@ -98,7 +98,7 @@ app.post("/api/v1/document/send", requireBusiness, (request, response) => {
   });
 });
 
-app.get("/test", (req, res) => {
+app.get("/test1", (req, res) => {
     res.json({
         success: true,
         server: "Server 1",
