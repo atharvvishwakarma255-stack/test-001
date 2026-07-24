@@ -132,6 +132,28 @@ paths:
           description: Validation failed
         "500":
           description: Internal server error
+  /api/v1/test/{id}:
+    get:
+      operationId: get__api_v1_test_id_
+      summary: GET /api/v1/test/{id}
+      x-generated-from: app.js:241
+      x-feature-owner: atharvvishwakarma255-stack
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              example: null
+        "400":
+          description: Validation failed
+        "500":
+          description: Internal server error
 components:
   securitySchemes:
     bearerAuth:
