@@ -111,3 +111,29 @@ paths:
       responses:
         "200":
           description: OK
+  /api/v1/business/templates/{id}/placeholders:
+    get:
+      operationId: get__api_v1_business_templates_id_placeholders
+      summary: GET /api/v1/business/templates/{id}/placeholders
+      x-generated-from: app.js:123
+      x-feature-owner: atharvvishwakarma255-stack
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Validation failed
+        "500":
+          description: Internal server error
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
