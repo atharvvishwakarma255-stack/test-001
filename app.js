@@ -106,7 +106,13 @@ app.get("/test", (req, res) => {
     });
 });
 
-
+app.get('/test2', (req, res) => {
+    res.json({
+        success: true,
+        server: "Server 1",
+        message: "Test route 2 is working"
+    });
+});
 
 app.get("/health2", (req, res) => {
     res.json({ status: "ok" });
