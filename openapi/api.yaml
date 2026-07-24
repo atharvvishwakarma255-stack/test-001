@@ -165,6 +165,15 @@ paths:
       responses:
         "200":
           description: OK
+  /test3:
+    get:
+      operationId: get__test3
+      summary: GET /test3
+      x-generated-from: routes/misc.routes.js:9
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
 components:
   securitySchemes:
     bearerAuth:
