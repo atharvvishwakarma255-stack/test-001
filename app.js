@@ -3,15 +3,6 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
-app.get("/one", (req, res) => {
-    res.send("Hello from Server 1");
-});
-
-app.get("/dashboard", (req, res) => {
-    res.send("Hello from Server 1");
-});
-
-
 app.post("/api/v1/document/send", requireBusiness, (request, response) => {
   const {
     business_package_id: businessPackageId,
