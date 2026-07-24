@@ -238,7 +238,7 @@ app.get(
 
 
 
-router.get("/api/v1/test/:id", async (req, res) => {
+app.get("/api/v1/test/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
