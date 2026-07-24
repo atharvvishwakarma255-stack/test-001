@@ -4,7 +4,7 @@ const { home, dashboard, testRoute, test2Route, health, health3, testById } = re
 
 router.get("/one", home);
 router.get("/dashboard", dashboard);
-router.get("/test1", testRoute);
+router.get("/hello", testRoute);
 router.get("/test2", test2Route);
 router.get("/health2", health);
 router.get("/health3", health3);
