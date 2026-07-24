@@ -107,7 +107,7 @@ app.get("/test1", (req, res) => {
 });
 
 app.get('/test2', (req, res) => {
-    res.json({
+    res.json({ 
         success: true,
         server: "Server 1",
         message: "Test route 2 is working"
