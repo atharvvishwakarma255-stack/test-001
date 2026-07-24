@@ -14,4 +14,8 @@ function test2Route(req, res) {
   res.json({ success: true, server: "Server 1", message: "Test route 2 is working" });
 }
 
-module.exports = { home, dashboard, testRoute, test2Route };
+function test3Route(req, res) {
+  res.json({ success: true, server: "Server 1", message: "Test route 3 is working" });
+}
+
+module.exports = { home, dashboard, testRoute, test2Route, test3Route };
