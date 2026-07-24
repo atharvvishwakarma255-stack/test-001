@@ -90,4 +90,12 @@ paths:
       responses:
         "200":
           description: OK
-
+  /test2:
+    get:
+      operationId: get__test2
+      summary: GET /test2
+      x-generated-from: app.js:109
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
