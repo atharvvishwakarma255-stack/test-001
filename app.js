@@ -106,7 +106,9 @@ app.get("/test", (req, res) => {
     });
 });
 
-app.get("/health", (req, res) => {
+
+
+app.get("/health2", (req, res) => {
     res.json({ status: "ok" });
 });
 
