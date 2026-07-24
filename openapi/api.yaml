@@ -58,22 +58,6 @@ paths:
                 name: Aniket
         "404":
           description: Not found
-  /:
-    get:
-      operationId: get__
-      summary: GET /
-      x-generated-from: app.js:6
-      responses:
-        "200":
-          description: OK
-  /dashboard:
-    get:
-      operationId: get__dashboard
-      summary: GET /dashboard
-      x-generated-from: app.js:10
-      responses:
-        "200":
-          description: OK
   /health2:
     get:
       operationId: get__health2
@@ -91,20 +75,38 @@ paths:
       responses:
         "200":
           description: OK
-  /api/v1/document/sends:
-    post:
-      operationId: post__api_v1_document_sends
-      summary: POST /api/v1/document/sends
-      x-generated-from: app.js:15
-      x-feature-owner: atharvvishwakarma255-stack
-      responses:
-        "200":
-          description: OK
   /test1:
     get:
       operationId: get__test1
       summary: GET /test1
       x-generated-from: app.js:101
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
+  /one:
+    get:
+      operationId: get__one
+      summary: GET /one
+      x-generated-from: app.js:6
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
+  /dashboard2:
+    get:
+      operationId: get__dashboard2
+      summary: GET /dashboard2
+      x-generated-from: app.js:10
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
+  /api/v1/document/sends2:
+    post:
+      operationId: post__api_v1_document_sends2
+      summary: POST /api/v1/document/sends2
+      x-generated-from: app.js:15
       x-feature-owner: atharvvishwakarma255-stack
       responses:
         "200":
