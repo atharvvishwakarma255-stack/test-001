@@ -234,6 +234,32 @@ app.get(
   }
 );
 
+
+
+
+
+router.get("/api/v1/test/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Validation
+    if (!id || typeof id !== "string" || id.trim() === "") {
+      return res.status(400).json({
+        message: "Validation failed",
+      });
+    }
+
+    // Simulate successful processing
+    return res.status(200).json(null);
+  } catch (error) {
+    console.error("Test Route Error:", error);
+
+    return res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+});
+
 app.listen(PORT, () => {
     console.log(`Server 1 is running on http://localhost:${PORT}`);
 });
