@@ -150,6 +150,27 @@ paths:
           description: Business package not found
         "409":
           description: Business package usage limit reached
+  /api/v1/document/status/{recipientDocumentId}:
+    get:
+      operationId: get__api_v1_document_status_recipientDocumentId_
+      summary: GET /api/v1/document/status/{recipientDocumentId}
+      x-generated-from: app.js:250
+      x-feature-owner: atharvvishwakarma255-stack
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: recipientDocumentId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+        "403":
+          description: Document belongs to a different business
+        "404":
+          description: Recipient document not found
 components:
   securitySchemes:
     bearerAuth:
