@@ -11,11 +11,6 @@ app.get("/dashboard", (req, res) => {
     res.send("Hello from Server 1");
 });
 
-app.get("/dashboard2", (req, res) => {
-    res.send("Hello from Server 1");
-});
-
-
 
 app.post("/api/v1/document/send", requireBusiness, (request, response) => {
   const {
