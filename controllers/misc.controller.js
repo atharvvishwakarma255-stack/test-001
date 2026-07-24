@@ -18,6 +18,10 @@ function health(req, res) {
   res.json({ status: "ok" });
 }
 
+function health3(req, res) {
+  res.json({ status: "ok", server: "Server 1", route: "health3" });
+}
+
 async function testById(req, res) {
   try {
     const { id } = req.params;
@@ -38,4 +42,4 @@ async function testById(req, res) {
   }
 }
 
-module.exports = { home, dashboard, testRoute, test2Route, health, testById };
+module.exports = { home, dashboard, testRoute, test2Route, health, health3, testById };
