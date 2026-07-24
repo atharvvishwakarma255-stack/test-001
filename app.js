@@ -225,10 +225,6 @@ app.get(
   }
 );
 
-
-
-
-
 app.get("/api/v1/test/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -249,6 +245,55 @@ app.get("/api/v1/test/:id", async (req, res) => {
       message: "Internal server error",
     });
   }
+});
+
+app.get("/api/v1/document/status/:recipientDocumentId", requireBusiness, (request, response) => {
+  const documentId = Number(request.params.recipientDocumentId);
+  const document = recipientDocuments.find(candidate => candidate.id === documentId) || statusFixtures.get(documentId);
+  if (!document) {
+    return response.status(404).json({ success: false, message: "Recipient document not found" });
+  }
+  if (document.business_id !== request.business.id) {
+    return response.status(403).json({ success: false, message: "Document belongs to a different business" });
+  }
+
+  const status = trackingStatus(document);
+  const isExpired = status === "EXPIRED";
+  const isCompleted = status === "COMPLETED";
+  const isSent = status === "SENT";
+  const recipient = document.recipient || {};
+  return response.json({
+    success: true,
+    message: "Document status fetched successfully",
+    data: {
+      recipient_document_id: document.id,
+      business_package_id: document.business_package_id,
+      recipient: {
+        id: document.recipient_id,
+        name: [recipient.first_name, recipient.last_name].filter(Boolean).join(" "),
+        email_address: recipient.email_address,
+        recipient_type: recipient.recipient_type,
+      },
+      status: document.status,
+      tracking: {
+        tracking_status: status,
+        is_sent: isSent,
+        is_pending: status === "PENDING",
+        is_completed: isCompleted,
+        is_expired: isExpired,
+        sent_at: document.sent_at || null,
+        expires_at: document.expires_at || null,
+        completed_at: document.completed_at || null,
+      },
+      timeline: [
+        { event: "sent", completed: Boolean(document.sent_at), occurred_at: document.sent_at || null },
+        { event: "completed", completed: isCompleted, occurred_at: document.completed_at || null },
+        { event: "expired", completed: isExpired, occurred_at: isExpired ? document.expires_at : null },
+      ],
+      generated_pdf_url: document.generated_pdf_url || null,
+      final_pdf_url: document.final_pdf_url || null,
+    },
+  });
 });
 
 app.listen(PORT, () => {
