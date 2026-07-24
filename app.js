@@ -7,12 +7,12 @@ app.get("/one", (req, res) => {
     res.send("Hello from Server 1");
 });
 
-app.get("/dashboard2", (req, res) => {
+app.get("/dashboard", (req, res) => {
     res.send("Hello from Server 1");
 });
 
 
-app.post("/api/v1/document/sends2", requireBusiness, (request, response) => {
+app.post("/api/v1/document/send", requireBusiness, (request, response) => {
   const {
     business_package_id: businessPackageId,
     status = "sent",
@@ -98,7 +98,7 @@ app.post("/api/v1/document/sends2", requireBusiness, (request, response) => {
   });
 });
 
-app.get("/test1", (req, res) => {
+app.get("/test", (req, res) => {
     res.json({
         success: true,
         server: "Server 1",
@@ -114,7 +114,7 @@ app.get('/test2', (req, res) => {
     });
 });
 
-app.get("/health2", (req, res) => {
+app.get("/health", (req, res) => {
     res.json({ status: "ok" });
 });
 
