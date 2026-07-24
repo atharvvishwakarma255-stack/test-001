@@ -110,46 +110,6 @@ paths:
           description: Validation failed
         "500":
           description: Internal server error
-  /api/v1/document/send:
-    post:
-      operationId: post__api_v1_document_send
-      summary: POST /api/v1/document/send
-      x-generated-from: app.js:15
-      x-feature-owner: atharvvishwakarma255-stack
-      security:
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                business_package_id:
-                  type: string
-                status:
-                  type: string
-                signature_type:
-                  type: string
-                is_notarization_required:
-                  type: boolean
-                expires_at:
-                  type: string
-                placeholder_values:
-                  type: array
-                recipients:
-                  type: array
-              required:
-                - business_package_id
-                - expires_at
-      responses:
-        "200":
-          description: OK
-        "400":
-          description: At least one recipient is required
-        "404":
-          description: Business package not found
-        "409":
-          description: Business package usage limit reached
   /api/v1/document/status/{recipientDocumentId}:
     get:
       operationId: get__api_v1_document_status_recipientDocumentId_
@@ -171,6 +131,71 @@ paths:
           description: Document belongs to a different business
         "404":
           description: Recipient document not found
+  /api/v1/auth/register:
+    post:
+      operationId: post__api_v1_auth_register
+      summary: POST /api/v1/auth/register
+      x-generated-from: routes/auth.routes.js:5
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
+  /api/v1/auth/login:
+    post:
+      operationId: post__api_v1_auth_login
+      summary: POST /api/v1/auth/login
+      x-generated-from: routes/auth.routes.js:6
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
+  /api/v1/document/sends:
+    post:
+      operationId: post__api_v1_document_sends
+      summary: POST /api/v1/document/sends
+      x-generated-from: routes/documents.routes.js:6
+      x-feature-owner: atharvvishwakarma255-stack
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+  /one:
+    get:
+      operationId: get__one
+      summary: GET /one
+      x-generated-from: routes/misc.routes.js:5
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
+  /dashboard:
+    get:
+      operationId: get__dashboard
+      summary: GET /dashboard
+      x-generated-from: routes/misc.routes.js:6
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
+  /test1:
+    get:
+      operationId: get__test1
+      summary: GET /test1
+      x-generated-from: routes/misc.routes.js:7
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
+  /health2:
+    get:
+      operationId: get__health2
+      summary: GET /health2
+      x-generated-from: routes/misc.routes.js:9
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
 components:
   securitySchemes:
     bearerAuth:
