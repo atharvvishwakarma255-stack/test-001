@@ -74,14 +74,6 @@ paths:
       responses:
         "200":
           description: OK
-  /api/v1/document/send:
-    post:
-      operationId: post__api_v1_document_send
-      summary: POST /api/v1/document/send
-      x-generated-from: app.js:15
-      responses:
-        "200":
-          description: OK
   /health2:
     get:
       operationId: get__health2
@@ -95,15 +87,6 @@ paths:
       operationId: get__test2
       summary: GET /test2
       x-generated-from: app.js:109
-      x-feature-owner: atharvvishwakarma255-stack
-      responses:
-        "200":
-          description: OK
-  /one:
-    get:
-      operationId: get__one
-      summary: GET /one
-      x-generated-from: app.js:6
       x-feature-owner: atharvvishwakarma255-stack
       responses:
         "200":
