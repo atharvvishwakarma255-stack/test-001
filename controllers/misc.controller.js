@@ -36,4 +36,4 @@ async function testById(req, res) {
   }
 }
 
-module.exports = { home, dashboard, testRoute, test2Route, health, health3, testById };
+module.exports = { home, dashboard, testRoute, test2Route, testById };
