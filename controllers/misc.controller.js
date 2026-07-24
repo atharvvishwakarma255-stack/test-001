@@ -14,13 +14,7 @@ function test2Route(req, res) {
   res.json({ success: true, server: "Server 1", message: "Test route 2 is working" });
 }
 
-function health(req, res) {
-  res.json({ status: "ok" });
-}
 
-function health3(req, res) {
-  res.json({ status: "ok", server: "Server 1", route: "health3" });
-}
 
 async function testById(req, res) {
   try {
