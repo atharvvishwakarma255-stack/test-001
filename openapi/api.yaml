@@ -82,3 +82,11 @@ paths:
       responses:
         "200":
           description: OK
+  /health2:
+    get:
+      operationId: get__health2
+      summary: GET /health2
+      x-generated-from: app.js:111
+      responses:
+        "200":
+          description: OK
