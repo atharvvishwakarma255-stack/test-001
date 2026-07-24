@@ -178,24 +178,6 @@ paths:
       responses:
         "200":
           description: OK
-  /health2:
-    get:
-      operationId: get__health2
-      summary: GET /health2
-      x-generated-from: routes/misc.routes.js:9
-      x-feature-owner: atharvvishwakarma255-stack
-      responses:
-        "200":
-          description: OK
-  /health3:
-    get:
-      operationId: get__health3
-      summary: GET /health3
-      x-generated-from: routes/misc.routes.js:10
-      x-feature-owner: atharvvishwakarma255-stack
-      responses:
-        "200":
-          description: OK
   /hello1:
     get:
       operationId: get__hello1
