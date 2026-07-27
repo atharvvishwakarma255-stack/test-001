@@ -14,8 +14,9 @@ paths:
             application/json:
               example:
                 success: true
-                server: Server 1
                 message: Test route is working
+                version: 2
+                environment: staging
       x-generated-from: routes/misc.routes.js:5
   /health:
     get:
@@ -68,6 +69,10 @@ paths:
       responses:
         "200":
           description: OK
+        "400":
+          description: password must be at least 8 characters
+        "409":
+          description: An account with this email already exists
   /api/v1/auth/login:
     post:
       operationId: post__api_v1_auth_login
@@ -77,6 +82,10 @@ paths:
       responses:
         "200":
           description: OK
+        "400":
+          description: email and password are required
+        "401":
+          description: Invalid email or password
   /api/v1/document/sends:
     post:
       operationId: post__api_v1_document_sends
@@ -88,6 +97,12 @@ paths:
       responses:
         "200":
           description: OK
+        "400":
+          description: At least one recipient is required
+        "404":
+          description: Business package not found
+        "409":
+          description: Business package usage limit reached
 components:
   securitySchemes:
     bearerAuth:
