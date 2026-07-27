@@ -29,6 +29,7 @@ paths:
             application/json:
               example:
                 status: ok
+      x-generated-from: routes/misc.routes.js:6
   /users:
     get:
       operationId: listUsers
