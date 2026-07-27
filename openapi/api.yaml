@@ -73,6 +73,22 @@ paths:
           description: password must be at least 8 characters
         "409":
           description: An account with this email already exists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+                - name
+                - email
+                - password
   /api/v1/auth/login:
     post:
       operationId: post__api_v1_auth_login
@@ -86,6 +102,19 @@ paths:
           description: email and password are required
         "401":
           description: Invalid email or password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+                - email
+                - password
   /api/v1/document/sends:
     post:
       operationId: post__api_v1_document_sends
@@ -103,6 +132,29 @@ paths:
           description: Business package not found
         "409":
           description: Business package usage limit reached
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                business_package_id:
+                  type: string
+                status:
+                  type: string
+                signature_type:
+                  type: string
+                is_notarization_required:
+                  type: boolean
+                expires_at:
+                  type: string
+                placeholder_values:
+                  type: array
+                recipients:
+                  type: array
+              required:
+                - business_package_id
+                - expires_at
 components:
   securitySchemes:
     bearerAuth:
