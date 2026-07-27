@@ -40,7 +40,11 @@ paths:
           content:
             application/json:
               example:
-                users: []
+                users:
+                  - user1
+                  - user2
+                  - user3
+      x-generated-from: routes/misc.routes.js:7
   /users/{id}:
     get:
       operationId: getUser
