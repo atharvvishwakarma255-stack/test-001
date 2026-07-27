@@ -7,4 +7,8 @@ async function healthCheck(req, res) {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 }
 
-module.exports = { testRoute, healthCheck };
+async function usersList(req, res) {
+  res.json({ users: ["user1", "user2", "user3"] });
+}
+
+module.exports = { testRoute, healthCheck, usersList };
