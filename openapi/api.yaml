@@ -138,46 +138,10 @@ paths:
       responses:
         "200":
           description: OK
-  /one:
-    get:
-      operationId: get__one
-      summary: GET /one
-      x-generated-from: routes/misc.routes.js:5
-      x-feature-owner: atharvvishwakarma255-stack
-      responses:
-        "200":
-          description: OK
   /dashboard:
     get:
       operationId: get__dashboard
       summary: GET /dashboard
-      x-generated-from: routes/misc.routes.js:6
-      x-feature-owner: atharvvishwakarma255-stack
-      responses:
-        "200":
-          description: OK
-  /hello1:
-    get:
-      operationId: get__hello1
-      summary: GET /hello1
-      x-generated-from: routes/misc.routes.js:7
-      x-feature-owner: atharvvishwakarma255-stack
-      responses:
-        "200":
-          description: OK
-  /test3:
-    get:
-      operationId: get__test3
-      summary: GET /test3
-      x-generated-from: routes/misc.routes.js:9
-      x-feature-owner: atharvvishwakarma255-stack
-      responses:
-        "200":
-          description: OK
-  /home:
-    get:
-      operationId: get__home
-      summary: GET /home
       x-generated-from: routes/misc.routes.js:6
       x-feature-owner: atharvvishwakarma255-stack
       responses:
