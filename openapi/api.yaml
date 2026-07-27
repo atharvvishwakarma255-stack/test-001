@@ -318,7 +318,7 @@ paths:
             application/json:
               example:
                 success: true
-                message: Docs synced successfully
+                message: Shubham !!!!!!
 components:
   securitySchemes:
     bearerAuth:
