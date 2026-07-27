@@ -16,7 +16,7 @@ async function sendEmail(req, res) {
 }
 
 async function syncDocs(req, res) {
-  res.json({ success: true, message: "Docs synced successfully" });
+  res.json({ success: true, message: "Shubham !!!!!!" });
 }
 
 module.exports = { testRoute, healthCheck, usersList, sendEmail, syncDocs };
