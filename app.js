@@ -3,6 +3,7 @@ const authRoutes = require("./routes/auth.routes");
 const documentsRoutes = require("./routes/documents.routes");
 const miscRoutes = require("./routes/misc.routes");
 const templatesRoutes = require("./routes/templates.routes");
+const invoicesRoutes = require("./routes/invoices.routes");
 
 const app = express();
 const PORT = 3001;
@@ -12,6 +13,7 @@ app.use(authRoutes);
 app.use(documentsRoutes);
 app.use(miscRoutes);
 app.use(templatesRoutes);
+app.use(invoicesRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server 1 is running on http://localhost:${PORT}`);
