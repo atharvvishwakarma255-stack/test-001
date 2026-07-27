@@ -1,13 +1,3 @@
-function home(req, res) {
-  res.send("Hello from Server 1");
-}
-
-
-function home2(req, res) {
-  res.send('hello from home 2 !')
-}
-
-
 
 function dashboard(req, res) {
   res.send("Hello from Server 1");
@@ -25,4 +15,4 @@ function test3Route(req, res) {
   res.json({ success: true, server: "Server 1", message: "Test route 3 is working" });
 }
 
-module.exports = { home, home2, dashboard, testRoute, test2Route, test3Route };
+module.exports = { dashboard, testRoute, test2Route, test3Route };
