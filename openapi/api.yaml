@@ -156,6 +156,80 @@ paths:
               required:
                 - business_package_id
                 - expires_at
+  /api/v1/invoices/{invoiceId}/send:
+    post:
+      operationId: post__api_v1_invoices_invoiceId_send
+      summary: POST /api/v1/invoices/{invoiceId}/send
+      x-generated-from: routes/invoices.routes.js:6
+      x-feature-owner: atharvvishwakarma255-stack
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: invoiceId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                recipient_email:
+                  type: string
+                amount:
+                  type: string
+                currency:
+                  type: string
+                send_copy_to_self:
+                  type: boolean
+                due_in_days:
+                  type: number
+                line_items:
+                  type: array
+                notes:
+                  type: string
+              required:
+                - recipient_email
+                - amount
+      responses:
+        "201":
+          description: OK
+          content:
+            application/json:
+              example:
+                success: true
+                message: Invoice sent successfully
+                data:
+                  invoice_id: 5001
+                  status: sent
+                  recipient_email: client@acme.com
+                  amount: 24999.5
+                  currency: INR
+                  due_date: 2026-08-11
+                  sent_at: 2026-07-27T10:30:00.000Z
+                  payment_link: https://pay.example.com/inv/5001
+                  line_items:
+                    - description: API integration work
+                      quantity: 1
+                      unit_price: 20000
+                    - description: Support retainer (July)
+                      quantity: 1
+                      unit_price: 4999.5
+                  reminders:
+                    enabled: true
+                    schedule:
+                      - 3 days before
+                      - on due date
+        "400":
+          description: recipient_email and amount are required
+        "404":
+          description: Invoice not found
+        "409":
+          description: Invoice has already been sent
+        "422":
+          description: amount must be greater than zero
 components:
   securitySchemes:
     bearerAuth:
