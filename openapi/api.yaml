@@ -58,48 +58,6 @@ paths:
                 name: Aniket
         "404":
           description: Not found
-  /api/v1/business/templates/{id}/placeholders:
-    get:
-      operationId: get__api_v1_business_templates_id_placeholders
-      summary: GET /api/v1/business/templates/{id}/placeholders
-      x-generated-from: app.js:123
-      x-feature-owner: atharvvishwakarma255-stack
-      security:
-        - bearerAuth: []
-      parameters:
-        - in: path
-          name: id
-          required: true
-          schema:
-            type: string
-      responses:
-        "200":
-          description: OK
-        "400":
-          description: Validation failed
-        "500":
-          description: Internal server error
-  /api/v1/document/status/{recipientDocumentId}:
-    get:
-      operationId: get__api_v1_document_status_recipientDocumentId_
-      summary: GET /api/v1/document/status/{recipientDocumentId}
-      x-generated-from: app.js:250
-      x-feature-owner: atharvvishwakarma255-stack
-      security:
-        - bearerAuth: []
-      parameters:
-        - in: path
-          name: recipientDocumentId
-          required: true
-          schema:
-            type: string
-      responses:
-        "200":
-          description: OK
-        "403":
-          description: Document belongs to a different business
-        "404":
-          description: Recipient document not found
   /api/v1/auth/register:
     post:
       operationId: post__api_v1_auth_register
