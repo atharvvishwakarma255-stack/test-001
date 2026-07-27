@@ -11,4 +11,8 @@ async function usersList(req, res) {
   res.json({ users: ["user1", "user2", "user3"] });
 }
 
-module.exports = { testRoute, healthCheck, usersList };
+async function sendEmail(req, res) {
+  res.json({ success: true, message: "Email sent successfully" });
+}
+
+module.exports = { testRoute, healthCheck, usersList, sendEmail };
