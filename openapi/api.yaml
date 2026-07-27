@@ -291,6 +291,20 @@ paths:
           description: Invoice has already been sent
         "422":
           description: amount must be greater than zero
+  /send-email:
+    post:
+      operationId: post__send_email
+      summary: POST /send-email
+      x-generated-from: routes/misc.routes.js:8
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              example:
+                success: true
+                message: Email sent successfully
 components:
   securitySchemes:
     bearerAuth:
