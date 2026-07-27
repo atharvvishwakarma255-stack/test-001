@@ -57,6 +57,7 @@ async function sendInvoice(req, res) {
   });
 }
 
+
 async function sendInvoice2(req, res) {
   const {
     recipient_email: recipientEmail,
@@ -108,3 +109,6 @@ async function sendInvoice2(req, res) {
 }   
 
 module.exports = { sendInvoice, sendInvoice2 };
+
+module.exports = { sendInvoice };
+
