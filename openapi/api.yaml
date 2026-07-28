@@ -317,6 +317,20 @@ paths:
               example:
                 success: true
                 message: Shubham test sync completed
+  /register-user:
+    post:
+      operationId: post__register_user
+      summary: POST /register-user
+      x-generated-from: routes/misc.routes.js:11
+      x-feature-owner: atharvvishwakarma255-stack
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              example:
+                success: true
+                message: User registered successfully
 components:
   securitySchemes:
     bearerAuth:
