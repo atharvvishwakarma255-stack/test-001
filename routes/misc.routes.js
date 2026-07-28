@@ -8,7 +8,7 @@ router.get("/users", usersList);
 router.post("/send-email", sendEmail);
 router.post("/sync-docs", syncDocs);
 router.post("/test-sync", testSync);
-router.post("/send-invoice-reminder/:invoiceId", sendInvoiceReminder);
+router.post("/send-invoice-reminder/:invoiceId", sendInvoiceReminder); 
 
 
 module.exports = router;
