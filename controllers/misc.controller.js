@@ -19,6 +19,8 @@ async function syncDocs(req, res) {
   res.json({ success: true, message: "Shubham !!!!!!" });
 }
 
+async function testSync(req, res) {
+  res.json({ success: true, message: "Shubham test sync completed" });
+}
 
-
-module.exports = { testRoute, healthCheck, usersList, sendEmail, syncDocs };
+module.exports = { testRoute, healthCheck, usersList, sendEmail, syncDocs, testSync };
