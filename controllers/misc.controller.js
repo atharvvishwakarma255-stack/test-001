@@ -1,8 +1,4 @@
 
-async function testRoute(req, res) {
-  res.json({ success: true, message: "Test route is working", version: 2, environment: "staging" });
-}
-
 async function healthCheck(req, res) {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 }
@@ -23,4 +19,4 @@ async function testSync(req, res) {
   res.json({ success: true, message: "Shubham test sync completed" });
 }
 
-module.exports = { testRoute, healthCheck, usersList, sendEmail, syncDocs, testSync };
+module.exports = {healthCheck, usersList, sendEmail, syncDocs, testSync };
