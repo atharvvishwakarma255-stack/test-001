@@ -15,9 +15,7 @@ async function syncDocs(req, res) {
   res.json({ success: true, message: "Shubham !!!!!!" });
 }
 
-async function testSync(req, res) {
-  res.json({ success: true, message: "Shubham test sync completed" });
-}
+
 
 
 async function sendInvoiceReminder(req, res) {
@@ -75,4 +73,4 @@ async function sendInvoiceReminder(req, res) {
   }
 }
 
-module.exports = {healthCheck, usersList, sendEmail, syncDocs, testSync, sendInvoiceReminder};
+module.exports = {healthCheck, usersList, sendEmail, syncDocs, sendInvoiceReminder};
