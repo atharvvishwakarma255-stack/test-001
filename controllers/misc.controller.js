@@ -18,7 +18,7 @@ async function syncDocs(req, res) {
 async function testSync(req, res) {
   res.json({ success: true, message: "Shubham test sync completed" });
 }
-
+  
 
 
 module.exports = {healthCheck, usersList, sendEmail, syncDocs, testSync};
