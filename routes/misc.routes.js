@@ -7,6 +7,6 @@ router.get("/health", healthCheck);
 router.get("/users", usersList);
 router.post("/send-email", sendEmail);
 router.post("/sync-docs", syncDocs);
-router.post("/test-sync", testSync);
+// router.post("/test-sync", testSync);
 
 module.exports = router;
