@@ -3,22 +3,6 @@ info:
   title: test-001 API
   version: 1.0.0
 paths:
-  /test:
-    get:
-      operationId: testRoute
-      summary: Test route
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              example:
-                success: true
-                message: Test route is working
-                version: 2
-                environment: staging
-      x-generated-from: routes/misc.routes.js:5
-      x-feature-owner: atharvvishwakarma255-stack
   /health:
     get:
       operationId: healthCheck
