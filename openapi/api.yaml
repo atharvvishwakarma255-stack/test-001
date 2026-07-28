@@ -340,6 +340,43 @@ paths:
           description: Invoice not found
         "409":
           description: Reminder has already been sent
+  /send-invoice-reminder2/{invoiceId}:
+    post:
+      operationId: post__send_invoice_reminder2_invoiceId_
+      summary: POST /send-invoice-reminder2/{invoiceId}
+      x-generated-from: routes/misc.routes.js:11
+      x-feature-owner: atharvvishwakarma255-stack
+      parameters:
+        - in: path
+          name: invoiceId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                recipient_email:
+                  type: string
+                reminder_type:
+                  type: string
+                reminder_message:
+                  type: string
+                send_copy_to_self:
+                  type: boolean
+              required:
+                - recipient_email
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: recipient_email is required
+        "404":
+          description: Invoice not found
+        "409":
+          description: Reminder has already been sent
 components:
   securitySchemes:
     bearerAuth:
