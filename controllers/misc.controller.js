@@ -7,9 +7,6 @@ async function usersList(req, res) {
   res.json({ users: ["user1", "user2", "user3"] });
 }
 
-async function sendEmail(req, res) {
-  res.json({ success: true, message: "Email sent successfully" });
-}
 
 async function syncDocs(req, res) {
   res.json({ success: true, message: "Shubham !!!!!!" });
@@ -129,4 +126,4 @@ async function sendInvoiceReminder2(req, res) {
   }
 }
 
-module.exports = {healthCheck, usersList, sendEmail, syncDocs, sendInvoiceReminder, sendInvoiceReminder2};
+module.exports = {healthCheck, usersList, syncDocs, sendInvoiceReminder, sendInvoiceReminder2};
