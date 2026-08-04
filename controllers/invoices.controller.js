@@ -57,8 +57,17 @@ async function sendInvoice(req, res) {
   });
 }
 
-
+async function getInvoice(req, res) {
+  const invoice = findInvoice(req.params.invoiceId);
+  if (!invoice) {
+    return res.status(404).json({ success: false, message: "Invoice not found" });
+  }
+  return res.status(200).json({
+    success: true,
+    data: invoice,
+  });
+}
  
 
-module.exports = { sendInvoice };
+module.exports = { sendInvoice, getInvoice };
 
