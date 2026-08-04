@@ -271,6 +271,15 @@ paths:
           description: OK
         "404":
           description: Invoice not found
+  /:
+    get:
+      operationId: get__
+      summary: GET /
+      x-generated-from: routes/templates.routes.js:5
+      x-feature-owner: manual:6a5c731fbf1e7e38b81d4eec
+      responses:
+        "200":
+          description: OK
 components:
   securitySchemes:
     bearerAuth:
