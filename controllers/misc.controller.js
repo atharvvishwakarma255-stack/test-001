@@ -12,6 +12,22 @@ async function syncDocs(req, res) {
   res.json({ success: true, message: "Shubham !!!!!!" });
 }
 
+async function systemStatus(req, res) {
+  if (req.query.detail === "deep") {
+    return res.status(503).json({ success: false, message: "Deep status probe unavailable" });
+  }
+  return res.status(200).json({
+    success: true,
+    data: {
+      service: "test-001",
+      state: "operational",
+      uptime_seconds: 128400,
+      version: "1.4.2",
+      checks: { database: "ok", queue: "ok" },
+    },
+  });
+}
+
 
 
 
@@ -126,4 +142,4 @@ async function sendInvoiceReminder2(req, res) {
   }
 }
 
-module.exports = {healthCheck, usersList, syncDocs, sendInvoiceReminder, sendInvoiceReminder2};
+module.exports = {healthCheck, usersList, syncDocs, systemStatus, sendInvoiceReminder, sendInvoiceReminder2};
