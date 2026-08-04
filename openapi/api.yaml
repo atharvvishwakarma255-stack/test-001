@@ -205,7 +205,7 @@ paths:
     post:
       operationId: post__sync_docs
       summary: POST /sync-docs
-      x-generated-from: routes/misc.routes.js:8
+      x-generated-from: routes/misc.routes.js:9
       x-feature-owner: atharvvishwakarma255-stack
       responses:
         "200":
@@ -219,7 +219,7 @@ paths:
     post:
       operationId: post__send_invoice_reminder_invoiceId_
       summary: POST /send-invoice-reminder/{invoiceId}
-      x-generated-from: routes/misc.routes.js:9
+      x-generated-from: routes/misc.routes.js:10
       x-feature-owner: atharvvishwakarma255-stack
       parameters:
         - in: path
@@ -257,7 +257,7 @@ paths:
       operationId: get__api_v1_invoices_invoiceId_
       summary: GET /api/v1/invoices/{invoiceId}
       x-generated-from: routes/invoices.routes.js:8
-      x-feature-owner: manual:6a5c731fbf1e7e38b81d4eec
+      x-feature-owner: Aniket Vishwakarma
       security:
         - bearerAuth: []
       parameters:
@@ -276,10 +276,33 @@ paths:
       operationId: get__
       summary: GET /
       x-generated-from: routes/templates.routes.js:5
-      x-feature-owner: manual:6a5c731fbf1e7e38b81d4eec
+      x-feature-owner: Aniket Vishwakarma
       responses:
         "200":
           description: OK
+  /api/v1/system/status:
+    get:
+      operationId: get__api_v1_system_status
+      summary: GET /api/v1/system/status
+      x-generated-from: routes/misc.routes.js:8
+      x-feature-owner: Aniket Vishwakarma
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              example:
+                success: true
+                data:
+                  service: test-001
+                  state: operational
+                  uptime_seconds: 128400
+                  version: 1.4.2
+                  checks:
+                    database: ok
+                    queue: ok
+        "503":
+          description: Deep status probe unavailable
 components:
   securitySchemes:
     bearerAuth:
